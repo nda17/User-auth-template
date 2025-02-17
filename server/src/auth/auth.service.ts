@@ -53,20 +53,6 @@ export class AuthService {
 		return this.buildResponseObject(user);
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
 	async getNewTokens(refreshToken: string) {
 		const result = await this.jwt.verifyAsync(refreshToken);
 

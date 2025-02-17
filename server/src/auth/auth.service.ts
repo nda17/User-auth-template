@@ -36,6 +36,18 @@ export class AuthService {
 		return this.buildResponseObject(user);
 	}
 
+
+
+
+
+
+
+
+
+
+
+	
+
 	async register(dto: AuthDto) {
 		const userExists = await this.userService.getByEmail(dto.email);
 
@@ -133,7 +145,7 @@ export class AuthService {
 
 	private async issueTokens(userId: string, rights: Role[]) {
 		const payload = { id: userId, rights };
-		
+
 		const accessToken = this.jwt.sign(payload, {
 			expiresIn: this.TOKEN_EXPIRATION_ACCESS
 		});

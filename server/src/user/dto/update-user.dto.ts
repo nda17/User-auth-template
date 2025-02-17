@@ -19,6 +19,6 @@ export class UpdateUserDto {
 	isManager?: boolean;
 
 	isPremium?: boolean;
-	
-	isAdminRequest?: boolean
+
+	isAdminRequest?: boolean;
 }

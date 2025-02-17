@@ -7,18 +7,20 @@
 	"license": "UNLICENSED",
 	"scripts": {
 		"build": "nest build",
+		"prisma generate": "prisma generate",
 		"format": "prettier --write \"src/**/*.ts\"",
-		"start": "nest start",
+		"lint": "eslint src",
+		"lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix --color",
 		"dev": "nest start --watch",
+		"start": "nest start",
 		"start:debug": "nest start --debug --watch",
 		"start:prod": "node dist/main",
-		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "jest --config ./test/jest-e2e.json",
-		"email": "emails dev"
+		"postinstall": "npx prisma generate"
 	},
 	"dependencies": {
 		"@nestjs-modules/mailer": "^2.0.2",

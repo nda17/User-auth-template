@@ -36,21 +36,6 @@ export class AuthService {
 		return this.buildResponseObject(user);
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	
-
 	async register(dto: AuthDto) {
 		const userExists = await this.userService.getByEmail(dto.email);
 
@@ -67,6 +52,20 @@ export class AuthService {
 
 		return this.buildResponseObject(user);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 	async getNewTokens(refreshToken: string) {
 		const result = await this.jwt.verifyAsync(refreshToken);
